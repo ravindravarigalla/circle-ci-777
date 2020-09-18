@@ -3,6 +3,6 @@ jobs:
   build:
     docker:
       - image: circleci/ruby:2.4.1
-     steps:
-       - checkout
-       - run: echo "helloworld from circleci"
+    steps:
+      - checkout
+      - run: echo "this is the build job"
