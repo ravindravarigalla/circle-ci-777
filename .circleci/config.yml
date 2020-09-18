@@ -1,8 +1,21 @@
 version: 2.1
-jobs:
+ jobs:
   build:
     docker:
       - image: circleci/ruby:2.4.1
     steps:
       - checkout
-      - run: echo " helloworld"
+      - run: echo "this is the build job"
+  test:
+    docker:
+      - image: circleci/ruby:2.4.1
+    steps:
+      - checkout
+      - run: echo "this is the test job"
+
+# Orchestrate our job run sequence
+workflows:
+  build_and_test:
+    jobs:
+      - build
+      - test
